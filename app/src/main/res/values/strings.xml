@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">IncomeCal</string>
+    <string name="gross_annual_income">Gross annual income</string>
+    <string name="total_tax">Total Tax</string>
+    <string name="total_tax_amount">Total Tax Amount</string>
+    <string name="federal_tax">Federal Tax</string>
+    <string name="federal_tax_amount">Federal Tax Amount</string>
+    <string name="cpp_ei_premiums_amount">CPP/EI premiums amount</string>
+    <string name="cpp_ei_premiums">CPP/EI premiums</string>
+    <string name="provincial_tax">Provincial Tax</string>
+    <string name="provincial_tax_amount">Provincial Tax Amount</string>
+    <string name="after_tax_income">After-tax income</string>
+    <string name="after_tax_income_amount">After-tax income amount</string>
+</resources>
