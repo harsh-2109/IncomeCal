@@ -11,4 +11,20 @@
     <string name="provincial_tax_amount">Provincial Tax Amount</string>
     <string name="after_tax_income">After-tax income</string>
     <string name="after_tax_income_amount">After-tax income amount</string>
+    <string name="working_hours">Working Hours</string>
+    <string name="hourly_wage">Hourly Wage</string>
+    <array name="province">
+        <item>Alberta</item>
+        <item>British Columbia</item>
+        <item>Manitoba</item>
+        <item>New Brunswick</item>
+        <item>Newfoundland and Labrador</item>
+        <item>Northwest Territories</item>
+        <item>Nova Scotia</item>
+        <item>Ontario</item>
+        <item>Prince Edward Island</item>
+        <item>Quebec</item>
+        <item>Saskatchewan</item>
+        <item>Yukon</item>
+    </array>
 </resources>

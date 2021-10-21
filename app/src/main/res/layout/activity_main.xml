@@ -7,15 +7,55 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/gross_annual_income"
+
+    <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.152">
+        app:layout_constraintVertical_bias="0.120000005">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Spinner
+                android:id="@+id/province_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:entries="@array/province"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/working_hours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/working_hours_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/working_hours"
+                    android:inputType="numberDecimal"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </TableRow>
+    </TableLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/gross_annual_income"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/gross_amount"
@@ -31,107 +71,144 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/gross_annual_income"
         tools:layout_editor_absoluteX="1dp">
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-        <TextView
-            android:id="@+id/total_tax_text_view"
-            android:hint="@string/total_tax"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_column="1"                />
-        <TextView
-            android:id="@+id/total_tax_amount_text_view"
-            android:hint="@string/total_tax_amount"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:layout_column="2"                />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:id="@+id/federal_tax_text_view"
-                android:hint="@string/federal_tax"
-                android:layout_weight="1"
-                android:padding="8dp"
-                android:layout_height="wrap_content"
-                android:layout_column="1"                />
-            <TextView
-                android:id="@+id/federal_tax_amount_text_view"
-                android:hint="@string/federal_tax_amount"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_column="2"                />
-
-        </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-            <TextView
-                android:id="@+id/provincial_tax_text_view"
-                android:hint="@string/provincial_tax"
-                android:layout_weight="1"
-                android:padding="8dp"
-                android:layout_height="wrap_content"
-                android:layout_column="1"                />
-            <TextView
-                android:id="@+id/provincial_tax_amount_text_view"
-                android:hint="@string/provincial_tax_amount"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_column="2"                />
+            android:layout_height="match_parent">
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
             <TextView
-                android:id="@+id/cpp_ei_premiums_text_view"
-                android:hint="@string/cpp_ei_premiums"
-                android:layout_weight="1"
-                android:padding="8dp"
+                android:id="@+id/total_tax_text_view"
                 android:layout_height="wrap_content"
-                android:layout_column="1"                />
-            <TextView
-                android:id="@+id/cpp_ei_premiums_amount_text_view"
-                android:hint="@string/cpp_ei_premiums_amount"
+                android:layout_column="1"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_column="2"                />
-
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-            <TextView
-                android:id="@+id/after_tax_income_text_view"
-                android:hint="@string/after_tax_income"
-                android:layout_weight="1"
+                android:hint="@string/total_tax"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
                 android:textSize="18sp"
-                android:textStyle="bold"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/total_tax_amount_text_view"
                 android:layout_height="wrap_content"
-                android:layout_column="1"                />
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:hint="@string/total_tax_amount"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/federal_tax_text_view"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:hint="@string/federal_tax"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/federal_tax_amount_text_view"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:hint="@string/federal_tax_amount" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/provincial_tax_text_view"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:hint="@string/provincial_tax"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/provincial_tax_amount_text_view"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:hint="@string/provincial_tax_amount" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/cpp_ei_premiums_text_view"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:hint="@string/cpp_ei_premiums"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/cpp_ei_premiums_amount_text_view"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:hint="@string/cpp_ei_premiums_amount" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/after_tax_income_text_view"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:hint="@string/after_tax_income"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/after_tax_income_amount_text_view"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_weight="1"
                 android:hint="@string/after_tax_income_amount"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_weight="1"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/hourly_wage_text_view"
                 android:layout_height="wrap_content"
-                android:layout_column="2"                />
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:hint="@string/hourly_wage"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/hourly_wage_amount_text_view"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:hint="@string/after_tax_income_amount"
+                android:textSize="18sp"
+                android:inputType="numberDecimal"
+                android:textStyle="bold" />
 
         </TableRow>
 
